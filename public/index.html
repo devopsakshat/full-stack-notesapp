@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notes — Your personal space</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon">N</span>
+        <span>Notes</span>
+      </a>
+      <div class="header-actions">
+        <span class="header-label" id="account-label">Your personal space</span>
+        <button class="logout-button" id="logout-button" type="button" hidden>Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="hero">
+      <span class="eyebrow">YOUR SPACE, YOUR THOUGHTS</span>
+      <h1>Capture what matters.</h1>
+      <p>A quiet place for your ideas, reminders, and everything in between.</p>
+    </section>
+
+    <section class="auth-transition" id="auth-transition" aria-live="polite" hidden>
+      <span class="transition-mark" aria-hidden="true">✓</span>
+      <h2 id="transition-title">You’re signed in</h2>
+      <p id="transition-message">Your private notes are ready.</p>
+      <div class="transition-progress" aria-hidden="true"><span></span></div>
+      <button class="primary-button" id="continue-to-notes" type="button">Continue to your notes</button>
+    </section>
+
+    <section class="auth-panel composer" id="auth-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="auth-title">Welcome back</h2>
+          <p id="auth-subtitle">Sign in to open your private notes.</p>
+        </div>
+        <span class="heading-icon" aria-hidden="true">↗</span>
+      </div>
+
+      <form class="auth-form" id="auth-form">
+        <label for="auth-email">Email</label>
+        <input id="auth-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+        <label for="auth-password">Password</label>
+        <input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" required />
+        <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+        <button class="primary-button" id="auth-submit" type="submit">Sign in</button>
+      </form>
+
+      <p class="auth-switch-copy"><span id="auth-switch-prompt">New here?</span>
+        <button class="text-button" id="auth-switch" type="button">Create an account</button>
+      </p>
+    </section>
+
+    <section class="composer app-content" hidden>
+      <div class="section-heading">
+        <div>
+          <h2>Create a note</h2>
+          <p>Get that thought out of your head.</p>
+        </div>
+        <span class="heading-icon">✎</span>
+      </div>
+
+      <form class="note-form">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Give your note a title..."
+          maxlength="100"
+          required
+        />
+
+        <label for="content">What's on your mind?</label>
+        <textarea
+          id="content"
+          name="content"
+          placeholder="Start writing here..."
+          rows="5"
+          required
+        ></textarea>
+
+        <div class="form-footer">
+          <span class="form-hint">Keep it simple. Write it down.</span>
+          <button type="submit" id="formbutton">
+            <span>＋</span> Add note
+          </button>
+        </div>
+      </form>
+    </section>
+    
+    <section class="prenotes notes-section app-content" hidden>
+     <div class="notes-grid"> 
+     <div class="note-card">
+       <h3>Welcome to NoteFlow 🚀</h3>
+       <p> My first backend-based notes app! Built with JavaScript and Express.js to understand REST APIs, GET and POST requests, and how frontend and backend communicate</p> 
+      </div>
+
+      <div class="note-card">
+       <h3>What's Coming Next? 🔐</h3>
+       <p> The vision is to turn NoteFlow into a full-stack product with MongoDB database integration, secure user authentication, personal notes for every user, and a publicly accessible deployment.</p> 
+      </div>
+
+     </div>
+    </section>
+    
+    
+    <section class="notes-section app-content" hidden>
+      <div class="notes-heading">
+        <div>
+          <h2>Your notes <span class="heading-dot"></span></h2>
+          <p>Your thoughts, all in one place.</p>
+        </div>
+      </div>
+
+      <div id="notes-container" class="notes-grid"> 
+        
+      </div>
+       
+    </section>
+
+    <footer class="site-footer">
+      <span>Made for your thoughts.</span>
+      <span>Less clutter. More clarity.</span>
+    </footer>
+  </main>
+</body>
+</html>
